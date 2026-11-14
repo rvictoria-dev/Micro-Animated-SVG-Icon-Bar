@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: hsl(28, 12%, 71%);
+  color: hsl(0, 0%, 90%);
+}
+
+nav {
+  display: flex;
+}
+
+button {
+  padding: 0.25rem 1.75rem;
+  background: none;
+  border: none;
+  color: inherit;
+  outline: none;
+  position: relative;
+}
+
+svg {
+  display: block;
+  width: 3.5em;
+  height: auto;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+button:not(.active) {
+  color: hsl(0, 0%, 35%);
+}
+
+button::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: hsl(18, 22%, 81%);
+}
+
+button:focus::before {
+  animation: pulse 0.8s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+button.active .jiggle {
+  animation: jiggle 0.2s 0.3s 4 cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes jiggle {
+  25% {
+    transform: rotate(-8deg);
+  }
+  75% {
+    transform: rotate(8deg);
+  }
+}
+
+button.active .rotate {
+  animation: rotate 0.8s 0.3s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+button.active .half-rotate {
+  animation: half-rotate 0.8s 0.3s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+}
+button.active .fall {
+  animation: fall 0.5s 1s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+}
+
+@keyframes half-rotate {
+  100% {
+    transform: rotate(180deg);
+  }
+}
+@keyframes fall {
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+button.active .push {
+  animation: push 0.2s 0.1s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes push {
+  50% {
+    transform: translateY(5px);
+  }
+}
