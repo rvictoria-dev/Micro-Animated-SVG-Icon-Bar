@@ -33,10 +33,10 @@ https://github.com/user-attachments/assets/b7397bf0-eae3-4e93-9229-e25748c189f7
 - **Class-based animation:** Each animation exists only within a selector such as `button.active .rotate`. When a button gains the `active` class, its icon’s animation begins, and when it loses it, the icon returns to its initial state.
 
 - **One animation per icon:**
-   1. **Alarm:** The `.jiggle` group wobbles between `-8deg` and `8deg` four times, and since the center is at `(0, 0)`, the bells rotate around the clock.
-   2. **Clock:** The hand (`.rotate`) rotates a full `360deg`.
-   3. **Timer:** the `.half-rotate` group rotates `180deg`. Then, the `.fall` property shifts the sand rectangle, and the `clip-path` shows only the part inside the hourglass, giving the impression that the sand is falling.
-   4. **Stopwatch:** The top button (`.push`) moves down `5px` and returns, and the hand rotates like on the clock.
+   - **Alarm:** The `.jiggle` group wobbles between `-8deg` and `8deg` four times, and since the center is at `(0, 0)`, the bells rotate around the clock.
+   - **Clock:** The hand (`.rotate`) rotates a full `360deg`.
+   - **Timer:** the `.half-rotate` group rotates `180deg`. Then, the `.fall` property shifts the sand rectangle, and the `clip-path` shows only the part inside the hourglass, giving the impression that the sand is falling.
+   - **Stopwatch:** The top button (`.push`) moves down `5px` and returns, and the hand rotates like on the clock.
 
 - **Sequence with delay:** The `animation` is written in short notation (`0.8s 0.3s ...`), where the second time value is the delay. The icon waits `0.3s` to start, and the sand fall waits `1s` to occur after the hourglass flips. The `forwards` property keeps the icon in its final position.
 
